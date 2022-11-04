@@ -1,0 +1,19 @@
+<form #formData="ngForm" (ngSubmit)="addExamData(formData)">
+    <input type="text" name="ExamName" #ExamName="ngModel" placeholder="Enter exam name"
+        [(ngModel)]="examDataService.examData.ExamName"/>
+    <br /><br />
+
+    <input type="text" name="PassMark" #PassMark="ngModel" placeholder="Enter passing mark"
+        [(ngModel)]="examDataService.examData.PassMark"/>
+    <br /><br />
+
+    <input type="text" name="TotalMark" #TotalMark="ngModel" placeholder="Enter total mark"
+        [(ngModel)]="examDataService.examData.TotalMark"/>
+    <br /><br />
+
+    <input type="text" name="totalQuestions" #totalQuestions="ngModel" placeholder="Enter question number"
+        [(ngModel)]="examDataService.examData.totalQuestions"/>
+    <br /><br />
+
+    <button type="submit">Add Exam</button>
+</form>

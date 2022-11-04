@@ -1,0 +1,72 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>    
+    <th scope="col">ExamUniqueName</th>
+    <th scope="col">examName</th>
+    <th scope="col">PassMark</th>
+    <th scope="col">TotalMark</th>
+    <th scope="col">TotalQuestions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users, index as i">
+    <th scope="row">{{ i + 1 }}</th>    
+    <td>{{user.examUniqueName}}</td>
+    <td>{{user.examName}}</td>
+    <td>{{user.passMark}}</td>
+    <td>{{user.totalMark}}</td>
+    <td>{{user.totalQuestions}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form #basicForm="ngForm" (ngSubmit)="getData(basicForm.value)">
+  <input type="text" ngModel name="user" placeholder="Enter user name">
+  <br /><br />
+
+  <input type="text" ngModel name="email" placeholder="Enter Email">
+  <br /><br />
+
+  <input type="text" ngModel name="password" placeholder="Enter password">
+  <br /><br />
+
+  <button>Register</button>
+</form> -->
+
+<!-- <p>
+  <ngb-alert [dismissible]="true">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </ngb-alert>
+  <ngb-alert [dismissible]="true">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </ngb-alert>
+</p> -->
+
+<!-- <mat-slider min="1" max="100" step="1" value="50"></mat-slider> -->
+
+<!-- <div class="example-button-row">
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
+  <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+</div> -->

@@ -1,0 +1,19 @@
+<h2>Login Function</h2>
+<!-- <button (click)="getButton('Hello world!')">Click Button</button> -->
+
+
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <input type="text" name="user" placeholder="Enter user name" formControlName="user" />
+    <br />
+    <span style="color: red;" *ngIf="user && user.invalid && user.touched">This field is required</span>
+    <br />
+
+
+    <input type="text" name="password" placeholder="Enter password" formControlName="password" />
+    <br />
+    <span style="color: red;" *ngIf="password && password.invalid && password.touched">This field is required</span>
+    <br />
+
+
+    <button>Login</button>
+</form>

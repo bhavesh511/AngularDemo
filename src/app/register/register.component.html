@@ -1,0 +1,161 @@
+<h2>{{title}}</h2>
+<button (click)="getEvent('hello')">Click Event</button>
+<br /><br />
+
+<input type="text" #txtKeyup (keyup)="getEvent(txtKeyup.value)" placeholder="event keyup" />
+<br /><br />
+
+
+<input type="text" #txtKeydown (keydown)="getEvent(txtKeydown.value)" placeholder="event keydown" />
+<br /><br />
+
+<input type="text" #txtblur (blur)="getEvent(txtblur.value)" placeholder="event blur" />
+<br /><br />
+
+<input type="text" #txtinput (input)="getEvent(txtinput.value)" placeholder="event input" />
+<br /><br />
+
+<h1 (mouseover)="getEvent('Mouse over')">Mou se over event</h1>
+<h1 (mouseleave)="getEvent('Mouse Leave')">Mouse leave event</h1>
+
+<input type="text" #txtGetvalue placeholder="Enter value" name="name" />
+<button (click)="getValue(txtGetvalue.value)">click</button>
+<p>Box Value : {{displayValue}}</p>
+
+<p>Counter</p>
+<button (click)="counter('minus')">--</button>
+<p>Count : {{number}}</p>
+<button (click)="counter('add')">++</button>
+
+<p>Counter End</p>
+
+<p>Property Binding and Interpolation</p>
+
+<input type="text" value={{value}} name="user-name" disabled="{{disable}}" />
+<br /><br />
+<input type="text" [value]=value name="user-name" [disabled]="disable" />
+
+<p>End</p>
+
+<p>IF-ELSE Condition</p>
+<h1 *ngIf="show; then ifBlock else elseBlock">
+</h1>
+
+
+<ng-template #ifBlock>
+    <h1>If condition </h1>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h1>Else condition </h1>
+</ng-template>
+<p>End</p>
+
+<p>ELSE-IF Condition</p>
+
+<ng-template [ngIf]="color==='red'">
+    <h1 style="color: red;">Red Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='green'">
+    <h1 style="color: green;">Green Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+    <h1 style="color: blue;">Blue Color</h1>
+</ng-template>
+
+<p>End</p>
+
+<p>Switch case Condition</p>
+<!-- <div [ngSwitch]="SwitchColor">
+    <h1 *ngSwitchCase="'red'" style="color: red;">Red Color</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green;">Green Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'orange'" style="color: orange;">Orange Color</h1>
+    <h1 *ngSwitchCase="'skyblue'" style="color: skyblue;">SkyBlue Color</h1>
+    <h1 *ngSwitchDefault>Unknow Color</h1>
+
+</div> -->
+<p>End</p>
+
+<p>For Loop</p>
+<h1 *ngFor="let item of ForLoopUser">{{item}}</h1>
+
+<h4 *ngFor="let items of ForLoopUserDetails">{{items.name}} -- {{items.user_email}} -- {{items.user_mobile}}</h4>
+
+<ul>
+    <li *ngFor="let items of ForLoopUserDetails">
+        <h4> {{items.name}} </h4>
+        <h4> {{items.user_email}} </h4>
+        <h4> {{items.user_mobile}} </h4>
+    </li>
+</ul>
+<p>End</p>
+
+<p>Nested For Loop</p>
+<ul *ngFor="let employee of Employees">
+    <li>
+        <h4> {{employee.name}} </h4>
+        <h4> {{employee.salary}} </h4>
+    </li>
+    <ul *ngFor="let account of employee.socialAccount">
+        <li>
+            {{account}}
+        </li>
+    </ul>
+</ul>
+<p>End</p>
+
+<p>Style Binding</p>
+<h1 [style.color]="color" [style.backgroundColor]="bgColor">{{style}}</h1>
+<button (click)="updateColor()">Update Color</button>
+<p>End</p>
+
+<p>ToDo List</p>
+<input type="text" placeholder="Enter data" #txtList />
+<br /><br />
+<button (click)="AddTask(txtList.value)">Add Task</button>
+
+<ul *ngFor="let item of list">
+    <li>
+        {{item.name}} <button (click)="removeTask(item.id)">Remove</button>
+    </li>
+</ul>
+
+<p>End</p>
+
+<p>Pass Data Child component</p>
+<h1>{{item}}</h1>
+
+<p>End</p>
+
+<!-- <p>Reuse Component</p>
+<li class="list">{{items.name}}</li>
+<li class="list">{{items.email}}</li>
+
+<p>End</p> -->
+
+<p>two way binding</p>
+<input type="text" [(ngModel)]="name" />
+<h5>{{name}}</h5>
+
+<p>End</p>
+
+<p> Template Referance Variable</p>
+<input type="text" #txtbox />
+<button (click)="getVal(txtbox)">Call function</button>
+
+<p>End</p>
+
+<p>Pipes Example</p>
+<h4>{{nameVal | uppercase}}</h4>
+<h4>{{nameVal | slice : 2 }}</h4>
+<h4>{{user | json | uppercase }}</h4>
+<h4>{{00002000.3000 | number : '2.2-5'}}</h4>
+<h4>{{20 | currency:"USD"}}</h4>
+<h4>{{"hello how are you" | titlecase}}</h4>
+<p>End</p>
+
+<p>Custom pipe</p>
+<h4>{{20 | pipeDemo : 72}}</h4>
+<p>End</p>
+
